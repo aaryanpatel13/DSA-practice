@@ -8,7 +8,6 @@ def secondLargest(nums):
         if nums[i] > largest:
             second_largest = largest
             largest = nums[i]
-            i +=1
         else:
             if nums[i]< largest and nums[i]> second_largest:
                 second_largest = nums[i]
