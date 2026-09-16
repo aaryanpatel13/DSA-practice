@@ -1,6 +1,5 @@
 #Transpose the given matrix or 2D list
-nums  = [[10,25,30],
-        [7,12,15],]
+nums  = [[1,2,3],[4,5,6],[7,8,9]]
 
 rows = len(nums)
 cols = len(nums[0])
