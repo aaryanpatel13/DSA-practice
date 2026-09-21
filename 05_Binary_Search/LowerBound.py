@@ -1,35 +1,29 @@
-#                           FLOOR in SORTED ARRAY
 """
-Given a sorted array nums[] and an integer x, 
-find the index (0-based) of the largest element in arr[] that is less than or equal to x.
-This element is called the floor of x. If such an element does not exist, return -1.
+Given a sorted array arr of n integers and an integer x, 
+find the index of the lower bound of x : the first index where arr[i] >= x. 
+Agar aisa koi element na ho, toh return n.
 
-Input: nums[] = [1, 2, 8, 10, 10, 12, 19], x = 5
-Output: 1
-Explanation: Largest number less than or equal to 5 is 2, whose index is 1.
+Input: arr = [1, 2, 2, 3, 5, 7], x = 4
+Output: 4
+Explanation: arr[4] = 5, jo x se >= hai, aur yeh pehla aisa index hai.
 
 """
 
-def floor(nums,x):
+def lowerBound(nums,x):
     n = len(nums)
     low = 0
     high = n-1
-    ans = -1
-    
+    ans = n
     while low <= high:
-        mid =(low+high)//2
+        mid = (low + high)//2
         
-        if nums[mid] == x:          
-            ans = mid               # keep this as answer
-            low = mid+1             # keep checing in the right part of array
-        elif nums[mid] > x:         # Answer is in the left part of the array    
-            high = mid -1
+        if nums[mid] >= x:              #lower bound means first element >= target
+            ans = mid                   # element >= target; check in the left part to more
+            high = mid - 1
         else:
-            ans = mid               # Smaller element found; keep this and check in the right part of the array 
-            low = mid +1
+            low = mid + 1               # element < target; check in the right part for ans
     return ans
-            
-nums = [1, 2, 8, 10, 10, 12, 19]
-x = 5
-print(floor(nums,x))
 
+nums = [1, 2, 2, 3, 5, 7]
+x = 4
+print(lowerBound(nums,x))
