@@ -61,7 +61,7 @@ print(threeSum(nums))
 
 #                                   OPTIMAL FORCE APPROACH
 #                                   Time Complexity: O(N²)
-#                                   Time Complexity: O(1)
+#                                   Space Complexity: O(1)
 
 def threeSum(nums):
     n = len(nums)
