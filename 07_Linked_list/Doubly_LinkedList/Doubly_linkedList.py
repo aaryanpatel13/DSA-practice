@@ -81,17 +81,84 @@ class Doubly_LinkedList:
         print("None")
         
         
+        
+    # Delete Head
+    def deleteHead(self):
+        if not self.head:
+            print("Linked list is empty")
+            return
+        self.head = self.head.next
+        if self.head:
+            self.head.prev = None
+        
+    
+    # Delete Tail or delete from last
+    def deleteTail(self):
+        if not self.head:
+            return("Linked list is empty")
+        # if list has only one node
+        elif self.head.next is None:
+            self.head = None
+            return
+        # move to the last node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            
+            current.prev.next = None
+            
+    # delete: delete by value
+    def delete(self, val):
+        if not self.head:
+            return "Linked list is empty"
+
+        current = self.head
+        while current:
+            if current.val == val:
+                # Deleting the head
+                if current == self.head:
+                    self.head = current.next
+                    if self.head:              # previous node exists check
+                        self.head.prev = None
+
+                # Deleting the tail
+                elif current.next is None:
+                    current.prev.next = None
+                    current.prev = None
+
+                # Deleting a middle node
+                else:
+                    current.prev.next = current.next
+                    current.next.prev = current.prev
+
+                return
+            current = current.next
+
+        return f"{val} is not found in the list"
+            
+                    
+        
 # TEST
 dll = Doubly_LinkedList()
 dll.insert_at_end(10)
 dll.insert_at_end(20)
 dll.insert_at_end(30)
+dll.show_forward()
+dll.insert_at_head(5)
 dll.insert_at_end(40)
 dll.insert_at_end(50)
 dll.insert_at_end(60)
 dll.insert_at_end(70)
 dll.show_forward()
 dll.show_backword()
+dll.show_forward()
+dll.deleteHead()
+dll.show_forward()
+dll.deleteTail()
+dll.show_forward()
+dll.delete(40)
+dll.show_forward()
 
         
         
