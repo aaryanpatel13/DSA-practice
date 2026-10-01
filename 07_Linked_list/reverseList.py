@@ -11,28 +11,28 @@ from linkedList_template import createLinkedList, showList
 
 
 # #                           Brute Force Approach
-# def reverseList(head):
-#     current = head
-#     values = []         # to store the value for each node
+def reverseList(head):
+    current = head
+    values = []         # to store the value for each node
     
-#     while current:          # while current is not None
-#         values.append(current.val)
-#         current = current.next
+    while current:          # while current is not None
+        values.append(current.val)
+        current = current.next
     
-#     # pop value from values and update each node
-#     current = head
-#     while current:
-#         current.val = values.pop()
-#         current = current.next
-#     return head
+    # pop value from values and update each node
+    current = head
+    while current:
+        current.val = values.pop()
+        current = current.next
+    return head
 
-# # Test
-# data = [10,20,30,40]
-# head = createLinkedList(data)
-# showList(head)
+# Test
+data = [10,20,30,40]
+head = createLinkedList(data)
+showList(head)
 
-# new_head = reverseList(head)
-# showList(new_head)
+new_head = reverseList(head)
+showList(new_head)
 
 
 #                   Optimal Approach
