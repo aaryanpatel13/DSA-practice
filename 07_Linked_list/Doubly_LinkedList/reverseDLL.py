@@ -1,3 +1,9 @@
+"""
+Given the head of a doubly linked list, reverse the list and return the head of the reversed doubly linked list.
+Note: Driver code will print the returned list in both forward and backward directions.
+
+"""
+
 def reverseDLL(self, head):
     # empty list or single node
     if not head or not head.next:
