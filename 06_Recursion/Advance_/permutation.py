@@ -5,7 +5,7 @@ output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
 '''
 
-                            #Type 1: Using extra space [One hash map to track path is used]
+                            #Type 1: Using  extra space [One hash map to track path is used]
 def permutation(nums):
     n = len(nums)
     ans = []
