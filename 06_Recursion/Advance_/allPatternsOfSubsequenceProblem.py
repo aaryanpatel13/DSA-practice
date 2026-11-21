@@ -16,7 +16,7 @@ def subsequence(indx,nums,subs,curr_sum,k):
     #BACK TRACKING
     subs.pop()
     curr_sum -= nums[indx]
-
+        
     # NOT PICK ELEMENT
     subsequence(indx+1,nums,subs,curr_sum,k)
 
