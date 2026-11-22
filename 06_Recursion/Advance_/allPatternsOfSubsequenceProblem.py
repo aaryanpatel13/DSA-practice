@@ -72,16 +72,16 @@ def subsequence(indx,nums,curr_sm,k):
     
     # PICK ELEMENT
     curr_sm += nums[indx]
-    left = subsequence(indx+1,nums,curr_sm,k)
+    pick = subsequence(indx+1,nums,curr_sm,k)
 
     # BACK TRACK
     curr_sm -= nums[indx]
 
     # NOT PICK ELEMENT
-    right = subsequence(indx+1,nums,curr_sm,k)
+    not_pick = subsequence(indx+1,nums,curr_sm,k)
 
     # RETURN COUNT
-    return left + right
+    return pick + not_pick
 
 nums = [1,2,1]
 k = 2
